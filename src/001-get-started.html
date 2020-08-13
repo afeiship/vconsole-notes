@@ -23,6 +23,12 @@
     setTimeout(() => {
       vConsole.show();
       vConsole.showTab("system");
+
+      // onready.. add copy event
+      vConsole.$.delegate(vConsole.$dom, 'click', '[data-action="copy"]', () => {
+        console.log('copy waht?')
+      });
+
       // vConsole.hideSwitch();
     }, 100);
 
@@ -66,10 +72,12 @@
 
 
 
-
     // add a tab
     myPlugin.on('renderTab', function (callback) {
-      var html = '<div>Click the tool button below!</div>';
+      var html = `<div>
+        Click the tool button below!
+        <button data-action="copy">Copy</button>
+        </div>`;
       callback(html);
     });
 
