@@ -61,3 +61,9 @@ myPlugin.on('addTool', function(callback) {
 
 vConsole.addPlugin(myPlugin);
 ```
+
+
+## 删除不需要的 plugin
+```js
+delete vConsole.pluginList['network']
+```
