@@ -15,6 +15,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
+    "shields-log": "^1.0.1",
     "vconsole": "^3.3.4"
   },
   "devDependencies": {

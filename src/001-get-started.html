@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.4/vconsole.min.js"
     integrity="sha512-/9dW/D2rWkAaLlyBbFEY50QbnpNP97+j2G9X/8A44xVTvEwYe8jUK3TEANhUbZ3Avr8UDIbcI8zHowc3ibGD+A=="
     crossorigin="anonymous"></script>
+  <script src="/shields-log/dist/index.js"></script>
 </head>
 
 <body>
@@ -15,6 +17,43 @@
     // init vConsole
     var vConsole = new VConsole();
     console.log('Hello world');
+    slog({ title: 'Platform', content: 'MacOs' });
+
+
+    setTimeout(() => {
+      vConsole.show();
+      vConsole.showTab("system");
+      // vConsole.hideSwitch();
+    }, 100);
+
+
+
+    var myPlugin = new VConsole.VConsolePlugin('my_plugin', 'My Plugin');
+
+    // event
+    myPlugin.on('init', function () {
+      console.log('My plugin init');
+    });
+
+    // add a tab
+    myPlugin.on('renderTab', function (callback) {
+      var html = '<div>Click the tool button below!</div>';
+      callback(html);
+    });
+
+
+    // add tool
+    myPlugin.on('addTool', function (callback) {
+      var button = {
+        name: 'Reload',
+        onClick: function (event) {
+          location.reload();
+        }
+      };
+      callback([button]);
+    });
+
+    vConsole.addPlugin(myPlugin);
   </script>
 </body>
 
