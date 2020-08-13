@@ -1,0 +1,23 @@
+{
+  "name": "@feizheng/vconsole-notes",
+  "version": "1.0.0",
+  "description": "Vconsole notes.",
+  "homepage": "https://github.com/afeiship/vconsole-notes",
+  "author": {
+    "name": "afeiship",
+    "email": "1290657123@qq.com"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "vconsole": "^3.3.4"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
